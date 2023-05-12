@@ -3,12 +3,8 @@ package com.colak.kafkatutorial.consumer;
 import com.colak.kafkatutorial.producer.KafkaTopicConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.messaging.handler.annotation.Header;
-import org.springframework.messaging.handler.annotation.Headers;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
 
 @Component
 public class KafkaMessageConsumer {
