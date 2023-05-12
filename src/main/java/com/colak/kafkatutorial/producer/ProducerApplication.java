@@ -17,7 +17,7 @@ public class ProducerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        //kafkaMessageSender.sendMessage("Hello, Kafka!");
-        kafkaMessageSender.sendMessage(null);
+        kafkaMessageSender.sendMessage("key1", "value1");
+//        kafkaMessageSender.sendMessage("key1",null);
     }
 }

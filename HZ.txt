@@ -1,0 +1,11 @@
+CREATE OR REPLACE MAPPING "my-topic" (__key VARCHAR, this VARCHAR) TYPE Kafka OPTIONS ('keyFormat'='varchar','valueFormat' = 'varchar','bootstrap.servers' = '127.0.0.1:9092');
+INSERT INTO "my-topic" (__key, this) VALUES ('key2','value2');
+
+SELECT * FROM "my-topic";
+
+CREATE OR REPLACE MAPPING mymap (__key VARCHAR, this VARCHAR) TYPE IMap OPTIONS ('keyFormat'='varchar','valueFormat'='varchar');
+SELECT * FROM mymap;
+
+
+CREATE JOB myingest AS  SINK INTO mymap SELECT * FROM "my-topic";
+DROP JOB myingest;
